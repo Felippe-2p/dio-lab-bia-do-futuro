@@ -2,17 +2,12 @@
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
-
 | Arquivo | Formato | Utilização no Agente |
 |---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
+| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores relacionadas a golpes e fraudes |
+| `perfil_investidor.json` | JSON | Representar perfil do cliente, histórico de incidentes e comportamento de risco |
+| `produtos_financeiros.json` | JSON | Listar diferentes tipos de golpes, sinais comuns e orientações preventivas |
+| `transacoes.csv` | CSV | Simular registros de tentativas de fraude em transações e contatos suspeitos   |
 
 ---
 
@@ -20,7 +15,12 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[Sua descrição aqui]
+- O arquivo `historico_atendimento.csv` foi adaptado para registrar interações relacionadas a golpes e fraudes (ligações suspeitas, phishing, WhatsApp clonado, boletos falsos).  
+- O arquivo `perfil_cliente.json` substituiu o antigo perfil de investidor, trazendo informações sobre histórico de incidentes, comportamento de risco e preferências de segurança.  
+- O arquivo `tipos_fraudes.json` substituiu a lista de produtos financeiros, descrevendo diferentes tipos de golpes, sinais comuns e orientações preventivas.  
+- O arquivo `transacoes.csv` foi adaptado para simular registros de tentativas de fraude em transações e contatos suspeitos, em vez de gastos pessoais.  
+- Todos os datasets foram expandidos para incluir **mais exemplos variados de fraudes**, tornando a base de conhecimento mais robusta e realista para o agente Protege+.  
+
 
 ---
 
@@ -29,12 +29,29 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+import pandas as pd
+import json
+
+# CSVs
+historico = pd.read_csv('data/historico_atendimento.csv')
+transacoes = pd.read_csv('data/transacoes.csv')
+
+# JSONs
+with open('data/perfil_cliente.json', 'r', encoding='utf-8') as f:
+    perfil = json.load(f)
+
+with open('data/tipos_fraudes.json', 'r', encoding='utf-8') as f:
+    fraudes = json.load(f)
+
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+- Os dados são consultados dinamicamente conforme a interação do cliente.  
+- O agente não insere todo o dataset no system prompt; em vez disso, busca apenas os registros relevantes (ex: histórico de atendimento, perfil do cliente, tipos de fraudes).  
+- As respostas são sempre baseadas nesses dados, com foco em **alertar sobre golpes e fraudes** e orientar o cliente a procurar **canais oficiais**.  
+- Quando não há informação suficiente, o agente admite a limitação e reforça a necessidade de contato com o banco ou agência oficial.  
+
 
 ---
 
@@ -44,12 +61,14 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 ```
 Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+- Nome: Maria Oliveira
+- Idade: 58
+- Perfil: Conhecimento digital básico
+- Preferência: Receber alertas sobre golpes comuns
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
+Últimos incidentes registrados:
+- 01/11: Ligação suspeita pedindo senha
+- 03/11: E-mail de phishing solicitando atualização cadastral
+- 05/11: Mensagem de WhatsApp pedindo transferência
+- 07/11: SMS com link fraudulento para atualização de app
 ```
