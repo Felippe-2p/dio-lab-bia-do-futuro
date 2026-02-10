@@ -1,11 +1,12 @@
 data,descricao,categoria,valor,tipo
-2025-10-01,Salário,receita,5000.00,entrada
-2025-10-02,Aluguel,moradia,1200.00,saida
-2025-10-03,Supermercado,alimentacao,450.00,saida
-2025-10-05,Netflix,lazer,55.90,saida
-2025-10-07,Farmácia,saude,89.00,saida
-2025-10-10,Restaurante,alimentacao,120.00,saida
-2025-10-12,Uber,transporte,45.00,saida
-2025-10-15,Conta de Luz,moradia,180.00,saida
-2025-10-20,Academia,saude,99.00,saida
-2025-10-25,Combustível,transporte,250.00,saida
+2025-10-01,Ligação de suposto gerente pedindo senha,telefone,0,alerta
+2025-10-02,E-mail de phishing solicitando atualização cadastral,email,0,alerta
+2025-10-03,Mensagem de WhatsApp pedindo transferência,mensagem,1500,alerta
+2025-10-05,Boleto falso enviado por e-mail,pagamento,1200,alerta
+2025-10-07,SMS com link suspeito para atualização de app,sms,0,alerta
+2025-10-10,Ligação cobrando dívida inexistente,telefone,2000,alerta
+2025-10-12,E-mail informando prêmio falso,email,0,alerta
+2025-10-15,Mensagem de WhatsApp solicitando código de autenticação,mensagem,0,alerta
+2025-10-20,Site fraudulento imitando banco,web,0,alerta
+2025-10-25,Oferta de investimento suspeito com rendimento acima do mercado,web,5000,alerta
+
