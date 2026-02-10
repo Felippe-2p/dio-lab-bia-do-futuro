@@ -1,6 +1,11 @@
 data,canal,tema,resumo,resolvido
-2025-09-15,chat,CDB,Cliente perguntou sobre rentabilidade e prazos,sim
-2025-09-22,telefone,Problema no app,Erro ao visualizar extrato foi corrigido,sim
-2025-10-01,chat,Tesouro Selic,Cliente pediu explicação sobre o funcionamento do Tesouro Direto,sim
-2025-10-12,chat,Metas financeiras,Cliente acompanhou o progresso da reserva de emergência,sim
-2025-10-25,email,Atualização cadastral,Cliente atualizou e-mail e telefone,sim
+2025-09-15,telefone,Ligação suspeita,Cliente recebeu ligação de suposto gerente pedindo senha,sim
+2025-09-22,email,Phishing,Cliente encaminhou e-mail suspeito solicitando atualização cadastral,sim
+2025-10-01,chat,WhatsApp clonado,Cliente relatou mensagem de cobrança via WhatsApp de número desconhecido,sim
+2025-10-12,chat,Link fraudulento,Cliente pediu orientação sobre link recebido em SMS,sim
+2025-10-25,telefone,Atualização de aparelho,Cliente foi instruído por suposto atendente a atualizar aplicativo fora da loja oficial,não
+2025-11-05,email,Prêmio falso,Cliente recebeu e-mail informando que ganhou um prêmio e deveria clicar em link,não
+2025-11-10,chat,Boleto falso,Cliente relatou cobrança de boleto com dados divergentes,sim
+2025-11-18,telefone,Cobrança indevida,Cliente recebeu ligação exigindo pagamento imediato de dívida inexistente,sim
+2025-11-25,email,Pedido de senha,Cliente recebeu mensagem solicitando atualização de senha bancária,sim
+2025-12-02,chat,Investimento suspeito,Cliente foi abordado com promessa de rendimento muito acima do mercado,não
