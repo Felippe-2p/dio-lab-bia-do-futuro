@@ -1,42 +1,42 @@
 [
   {
-    "nome": "Tesouro Selic",
-    "categoria": "renda_fixa",
-    "risco": "baixo",
-    "rentabilidade": "100% da Selic",
-    "aporte_minimo": 30.00,
-    "indicado_para": "Reserva de emergência e iniciantes"
-  },
-  {
-    "nome": "CDB Liquidez Diária",
-    "categoria": "renda_fixa",
-    "risco": "baixo",
-    "rentabilidade": "102% do CDI",
-    "aporte_minimo": 100.00,
-    "indicado_para": "Quem busca segurança com rendimento diário"
-  },
-  {
-    "nome": "LCI/LCA",
-    "categoria": "renda_fixa",
-    "risco": "baixo",
-    "rentabilidade": "95% do CDI",
-    "aporte_minimo": 1000.00,
-    "indicado_para": "Quem pode esperar 90 dias (isento de IR)"
-  },
-  {
-    "nome": "Fundo Multimercado",
-    "categoria": "fundo",
-    "risco": "medio",
-    "rentabilidade": "CDI + 2%",
-    "aporte_minimo": 500.00,
-    "indicado_para": "Perfil moderado que busca diversificação"
-  },
-  {
-    "nome": "Fundo de Ações",
-    "categoria": "fundo",
+    "nome": "Phishing",
+    "categoria": "email",
     "risco": "alto",
-    "rentabilidade": "Variável",
-    "aporte_minimo": 100.00,
-    "indicado_para": "Perfil arrojado com foco no longo prazo"
+    "descricao": "Golpe em que o cliente recebe e-mails falsos solicitando atualização cadastral ou senha.",
+    "sinais_comuns": "Links suspeitos, erros de português, remetente estranho",
+    "orientacao": "Nunca clique em links. Procure sempre os canais oficiais do banco."
+  },
+  {
+    "nome": "WhatsApp clonado",
+    "categoria": "mensagem",
+    "risco": "alto",
+    "descricao": "Fraudador usa número clonado para pedir transferências ou pagamentos.",
+    "sinais_comuns": "Mensagens urgentes pedindo dinheiro, número desconhecido",
+    "orientacao": "Não faça transações via WhatsApp. Confirme diretamente com sua agência."
+  },
+  {
+    "nome": "Ligação suspeita",
+    "categoria": "telefone",
+    "risco": "alto",
+    "descricao": "Golpistas se passam por gerentes de conta pedindo senhas ou dados pessoais.",
+    "sinais_comuns": "Solicitação de senha, pressão para agir rápido",
+    "orientacao": "Nenhum banco pede senha por telefone. Desligue e contate sua agência."
+  },
+  {
+    "nome": "Boleto falso",
+    "categoria": "pagamento",
+    "risco": "alto",
+    "descricao": "Fraudadores enviam boletos adulterados com dados divergentes.",
+    "sinais_comuns": "Beneficiário diferente, valores alterados",
+    "orientacao": "Confira sempre os dados do beneficiário e pague apenas via canais oficiais."
+  },
+  {
+    "nome": "Prêmio falso",
+    "categoria": "sms/email",
+    "risco": "médio",
+    "descricao": "Mensagem informando que o cliente ganhou um prêmio e precisa clicar em link.",
+    "sinais_comuns": "Ofertas imperdíveis, links encurtados",
+    "orientacao": "Ignore essas mensagens. Bancos não oferecem prêmios por SMS ou e-mail."
   }
 ]
