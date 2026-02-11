@@ -29,20 +29,15 @@
 ### Como os dados são carregados?
 > Descreva como seu agente acessa a base de conhecimento.
 
-import pandas as pd
+```python
 import json
+import pandas as pd
 
-# CSVs
-historico = pd.read_csv('data/historico_atendimento.csv')
-transacoes = pd.read_csv('data/transacoes.csv')
-
-# JSONs
-with open('data/perfil_cliente.json', 'r', encoding='utf-8') as f:
-    perfil = json.load(f)
-
-with open('data/tipos_fraudes.json', 'r', encoding='utf-8') as f:
-    fraudes = json.load(f)
-
+perfil = json.load(open('./data/perfil_cliente.json', encoding='utf-8'))
+transacoes = pd.read_csv('./data/transacoes.csv')
+historico = pd.read_csv('./data/historico_atendimento.csv')
+fraudes = json.load(open('./data/tipos_fraudes.json', encoding='utf-8'))
+```
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
