@@ -1,149 +1,72 @@
 # 🤖 Agente Financeiro Inteligente com IA Generativa
 
-## Contexto
+🛡️ Protege+ – Agente de Prevenção de Fraudes Digitais
+📌 Contexto
+Fraudes digitais estão cada vez mais sofisticadas e afetam principalmente pessoas acima de 50 anos.
+O Protege+ é um agente inteligente que utiliza IA Generativa para orientar clientes de forma simples e acolhedora, ajudando-os a reconhecer sinais de fraude e proteger suas finanças digitais.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
+🎯 Objetivos
+- 👵👴 Apoiar clientes com baixa familiaridade digital.
+- 🔍 Identificar transações suspeitas e padrões de fraude.
+- 🗣️ Explicar riscos em linguagem acessível e clara.
+- 🛡️ Reforçar boas práticas de segurança (sem senhas por telefone, e-mail ou WhatsApp).
 
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
-
----
-
-## O Que Você Deve Entregar
-
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
-
----
-
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
-
----
-
-### 3. Prompts do Agente
-
-Documente os prompts que definem o comportamento do seu agente:
-
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
-
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
-
----
-
-### 4. Aplicação Funcional
-
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
-
----
-
-### 5. Avaliação e Métricas
-
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
-
----
-
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
-
-```
-📁 lab-agente-financeiro/
+🗂️ Estrutura do Repositório
+📁 dio-lab-bia-do-futuro/
 │
-├── 📄 README.md
+├── 📄 README.md                # Documentação principal
+├── 📁 dados/                   # Dados simulados para o agente
+│   ├── transacoes.csv
+│   ├── historico_atendimento.csv
+│   ├── perfil_cliente.json
+│   └── tipos_fraudes.json
 │
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
+├── 📁 docs/                    # Documentação detalhada
+│   ├── 01-documentacao-agente.md
+│   ├── 02-base-conhecimento.md
+│   ├── 03-prompts.md
+│   ├── 04-metricas.md
+│   └── 05-pitch.md
 │
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
+├── 📁 src/                     # Código da aplicação
+│   └── app.py
 │
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
-```
+├── 📁 exemplos/                # Referências e exemplos
+└── 📁 assets/                  # Imagens e diagramas
 
----
 
-## Dicas Finais
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+🚀 Como Executar
+- Clone o repositório:
+git clone https://github.com/Felippe-2p/dio-lab-bia-do-futuro.git
+- Instale as dependências:
+pip install -r requirements.txt
+- Execute a aplicação com Streamlit:
+py -3.13 -m streamlit run src/app.py
+- Acesse no navegador:
+http://localhost:8501
+
+
+
+🎥 Pitch
+📄 Roteiro disponível em [Parece que o resultado não era seguro para exibição. Vamos mudar as coisas e tentar outra opção!]
+👉 Link do vídeo: [Cole aqui seu link do pitch]
+
+🛠️ Tecnologias
+- ⚙️ Python 3.13
+- 🖥️ Streamlit para interface interativa
+- 🤖 Ollama (gpt-oss) para IA generativa
+- 📊 Pandas para manipulação de dados
+- 📂 JSON/CSV simulados para base de conhecimento
+
+✨ Diferencial
+O Protege+ não é apenas um chatbot. Ele é um agente inteligente de prevenção de fraudes, que combina:
+- Dados reais do cliente 📂
+- Orientação personalizada 👤
+- Linguagem simples e acolhedora 💬
+- Foco em segurança digital 🛡️
+
+👤 Autor
+- Felippe-2p
+- Projeto derivado de digitalinnovationone/dio-lab-bia-do-futuro (github.com in Bing) com melhorias e soluções próprias.
+
